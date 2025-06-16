@@ -904,6 +904,14 @@ async function CallAndExecuteTool(selected_server:any, server_credentials:any,to
                 "appSecret": server_credentials[selected_server]?.appSecret || "",
             }
             break;
+        case "WOOCOMMERCE":
+            args["__credentials__"] = {
+                "accessToken": server_credentials[selected_server]?.accessToken || "",
+                "businessAccountId": server_credentials[selected_server]?.businessAccountId || "",
+                "appId": server_credentials[selected_server]?.appId || "",
+                "appSecret": server_credentials[selected_server]?.appSecret || "",
+            }
+            break;
         default:
             break;
     }
