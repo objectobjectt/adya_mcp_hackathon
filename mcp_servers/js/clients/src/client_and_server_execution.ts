@@ -904,6 +904,13 @@ async function CallAndExecuteTool(selected_server:any, server_credentials:any,to
                 "appSecret": server_credentials[selected_server]?.appSecret || "",
             }
             break;
+        case "INFLUXDB":
+            args["__credentials__"] = {
+                "influxdb_url": server_credentials[selected_server]?.influxdb_url || "",
+                "influxdb_token": server_credentials[selected_server]?.influxdb_token || "",
+                "influxdb_default_org": server_credentials[selected_server]?.influxdb_default_org || "",
+            }
+            break;
         default:
             break;
     }

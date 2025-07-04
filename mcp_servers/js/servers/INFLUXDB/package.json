@@ -1,0 +1,52 @@
+{
+  "name": "influxdb-mcp-server",
+  "version": "0.1.1",
+  "main": "src/index.js",
+  "type": "module",
+  "bin": {
+    "influxdb-mcp-server": "src/index.js"
+  },
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --detectOpenHandles --runInBand",
+    "start": "node src/index.js",
+    "build": "tsc --outDir build"
+  },
+  "keywords": [
+    "influxdb",
+    "mcp",
+    "model context protocol",
+    "claude",
+    "anthropic",
+    "timeseries"
+  ],
+  "author": "Sam Coward <idoru42@gmail.com> (https://github.com/idoru)",
+  "license": "MIT",
+  "description": "A Model Context Protocol (MCP) server for InfluxDB that enables Claude and other AI assistants to work with time-series data",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idoru/influxdb-mcp-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/idoru/influxdb-mcp-server/issues"
+  },
+  "homepage": "https://github.com/idoru/influxdb-mcp-server#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "node-fetch": "^3.3.2",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@types/dockerode": "^3.3.23",
+    "@types/jest": "^29.5.5",
+    "@types/node": "^22.13.10",
+    "dockerode": "^4.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.8.2",
+    "wait-for-expect": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=14.16.0"
+  }
+}
