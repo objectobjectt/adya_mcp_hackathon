@@ -8,7 +8,7 @@ export async function getRecords(accessToken, module, args = {}) {
         sort_order = DEFAULT_SORT_ORDER, 
         sort_by = DEFAULT_SORT_BY 
     } = args;
-    
+     
     const capitalizedModule = module.charAt(0).toUpperCase() + module.slice(1);
 
     const params = new URLSearchParams({

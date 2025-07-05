@@ -9,37 +9,37 @@ export function configureLogger() {
     };
 }
 
-// Utility function to log 
+// Utility function to log
 export const logger = {
     info: (message, ...args) => {
-        console.log( message, ...args);
+        console.log("ℹ️", message, ...args);
     },
     
     success: (message, ...args) => {
-        console.log(message, ...args);
+        console.log("✅", message, ...args);
     },
     
     error: (message, ...args) => {
-        console.error(message, ...args);
+        console.error("❌", message, ...args);
     },
     
     warning: (message, ...args) => {
-        console.log(message, ...args);
+        console.log("⚠️", message, ...args);
     },
     
     loading: (message, ...args) => {
-        console.log(message, ...args);
+        console.log("🔄", message, ...args);
     },
     
     network: (message, ...args) => {
-        console.log(message, ...args);
+        console.log("🌐", message, ...args);
     },
     
     clipboard: (message, ...args) => {
-        console.log(message, ...args);
+        console.log("📋", message, ...args);
     },
     
     rocket: (message, ...args) => {
-        console.log(message, ...args);
+        console.log("🚀", message, ...args);
     }
 };

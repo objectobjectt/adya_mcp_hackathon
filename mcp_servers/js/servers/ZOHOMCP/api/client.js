@@ -19,7 +19,7 @@ export async function makeZohoRequest(accessToken, endpoint, method = "GET", dat
             headers,
             data,
         });
-
+        console.log(response.data)
         return response.data;
     } catch (error) {
         logger.error("Zoho API Error:", {

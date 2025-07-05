@@ -29,6 +29,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
 });
 
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
+    
     const { name, arguments: args } = request.params;
 
     try {
@@ -141,13 +142,11 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
 async function main() {
     const transport = new StdioServerTransport();
-    console.log("🚀 Starting Zoho CRM MCP Server...");
-
     await server.connect(transport);
-    console.log("✅ Zoho CRM MCP Server is running");
+
 }
 
 main().catch((error) => {
-    console.error("❌ Server failed to start:", error);
+    console.error("Server failed to start:", error);
     process.exit(1);
 });
