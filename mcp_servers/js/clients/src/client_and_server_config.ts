@@ -7,10 +7,10 @@ export const ClientsConfig:any = [
 
 export const ServersConfig:any = [
     {
-        server_name :"WORDPRESS",
-        server_features_and_capability:`WORDPRESS`,
-        path : "build/index.js"
-    },
+        server_name :"ZOHOMCP",
+        server_features_and_capability:`ZOHOMCP`,
+        path : "index.js"
+    }
     // {
     //     server_name :"WORDPRESS",
     //     server_features_and_capability:`WORDPRESS`,

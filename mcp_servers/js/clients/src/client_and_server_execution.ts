@@ -873,6 +873,13 @@ async function CallAndExecuteTool(selected_server:any, server_credentials:any,to
                 "refresh_token": dropboxCreds.refresh_token || dropboxCreds.refreshToken || "",
             }
             break;
+        case "ZOHOMCP":
+            args["__credentials__"] = {
+                "client_id": server_credentials[selected_server]?.client_id || "",
+                "client_secret": server_credentials[selected_server]?.client_secret || "",
+                "authorization_code": server_credentials[selected_server]?.authorization_code || server_credentials[selected_server]?.autharization_code || "" ,        
+   }
+                break;
         case "FIGMA_MCP":
             args["__credentials__"] = {
                 "api_token": server_credentials[selected_server]?.api_token || "",
