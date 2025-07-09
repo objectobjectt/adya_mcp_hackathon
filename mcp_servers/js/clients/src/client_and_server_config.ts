@@ -26,5 +26,10 @@ export const ServersConfig: any = [
     server_features_and_capability: `FEDORA`,
     path: "build/index.js"
   },
+  {
+    server_name: "ZOHOMCP",
+    server_features_and_capability: `ZOHOMCP`,
+    path: "index.js"
+  }
 ]
 
