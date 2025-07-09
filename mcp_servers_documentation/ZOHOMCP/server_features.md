@@ -82,7 +82,7 @@ The **Zoho CRM MCP Server** is a connector module in the Vanij Platform that ena
     "authentication_code": "your-zoho-auth-code"
   }
 }
-
+```
 ### How to Get These Credentials
 
 **Step-by-Step:**
