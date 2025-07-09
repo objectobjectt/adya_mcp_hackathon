@@ -1,0 +1,29 @@
+{
+  "name": "podman-mcp-server",
+  "version": "0.1.0",
+  "description": "MCP server for Podman operations",
+  "main": "build/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --outDir build",
+    "start": "node dist/index.js",
+    "dev": "tsc -w",
+    "prepare": "npm run build"
+  },
+  "bin": {
+    "podman-mcp-server": "./dist/index.js"
+  },
+  "keywords": ["podman", "mcp", "server", "claude", "cline"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
