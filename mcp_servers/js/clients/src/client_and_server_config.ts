@@ -15,6 +15,11 @@ export const ServersConfig:any = [
         server_name :"INFLUXDB",
         server_features_and_capability:`INFLUXDB`,
         path : "build/index.js"
+    },
+    {
+        server_name :"PODMAN",
+        server_features_and_capability:`PODMAN`,
+        path : "build/index.js"
     }
 ]
 
