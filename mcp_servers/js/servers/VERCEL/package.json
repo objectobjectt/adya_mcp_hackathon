@@ -1,0 +1,42 @@
+{
+  "name": "vercel-mcp-server",
+  "version": "1.0.0",
+  "description": "Vercel MCP Server with Gemini AI integration",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "build": "echo 'No build step required for JavaScript'",
+    "test": "echo 'No tests specified'"
+  },
+  "bin": {
+    "vercel-mcp-server": "src/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "vercel",
+    "ai",
+    "gemini",
+    "deployment",
+    "serverless"
+  ],
+  "author": "Vercel MCP Team",
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "dotenv": "^17.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vercel/mcp-server"
+  },
+  "bugs": {
+    "url": "https://github.com/vercel/mcp-server/issues"
+  },
+  "homepage": "https://github.com/vercel/mcp-server#readme"
+}
