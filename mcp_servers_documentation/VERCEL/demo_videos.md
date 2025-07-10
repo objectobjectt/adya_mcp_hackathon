@@ -3,6 +3,7 @@
 ## 🎥 Demo Video
 
 - **How to get Vercel Creds**: [Watch Here](https://youtu.be/GugqHKl-N64?si=ui-4q6CIdDbwVB8t)
+- **Demo**: [Watch Here](https://youtu.be/K44m3h1TuBg)
 
 ---
 
