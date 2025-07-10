@@ -1,7 +1,7 @@
 {
-  "name": "prathammanocha-comprehensive-wp-mcp",
+  "name": "fedora-mcp",
   "version": "1.0.0",
-  "description": "WordPress MCP Server with comprehensive API support",
+  "description": "fedora MCP Server",
   "type": "module",
   "main": "build/index.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "typescript": "^5.0.0"
   },
   "keywords": [
-    "wordpress",
+    "fedora-mcp",
     "mcp",
     "api",
     "ai",
