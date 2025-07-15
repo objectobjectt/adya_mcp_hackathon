@@ -38,13 +38,13 @@ import { listTaskLabels } from "./handlers/listTaskLabels.js";
 import { deleteLabelFromTask } from "./handlers/deleteTaskLabel.js";
 import { updateTask } from "./handlers/updateTaskTool.js";
 import { createTask } from "./handlers/createTaskTool.js";
-import { CallToolRequestSchema, ErrorCode, ListToolsRequestSchema, ListPromptsRequest, McpError, ListPromptsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
+import { CallToolRequestSchema, ErrorCode, ListToolsRequestSchema, McpError } from "@modelcontextprotocol/sdk/types.js";
 
 // Configure logger and validate environment
 configureLogger();
 
 class InfluxDBServer {
-    private server: Server;
+    // private server: Server;
 
     constructor() {
         this.server = new Server(
@@ -63,14 +63,14 @@ class InfluxDBServer {
         this.setupToolHandlers();
 
         // Error handling
-        this.server.onerror = (error: any) => console.error("[MCP Error]", error);
+        this.server.onerror = (error) => console.error("[MCP Error]", error);
         process.on("SIGINT", async () => {
             await this.server.close();
             process.exit(0);
         });
     }
 
-    private extractCredentialsFromRequest(requestBody) {
+    extractCredentialsFromRequest(requestBody) {
         try {
             // Check for the new expected format first
             if (requestBody.selected_server_credentials && requestBody.selected_server_credentials.ZOHOMCP) {
@@ -111,7 +111,7 @@ class InfluxDBServer {
         }
     }
 
-    private setupToolHandlers() {
+    setupToolHandlers() {
         this.server.setRequestHandler(ListToolsRequestSchema, async () => ({
             tools: [
                 {
@@ -579,67 +579,57 @@ class InfluxDBServer {
             try {
                 switch (request.params.name) {
                     case "list-organizations":
-                        return await listOrganizations(request.params.arguments as unknown as { creds: any });
+                        return await listOrganizations(request.params.arguments);
                     case "list-buckets":
-                        return await listBuckets(request.params.arguments as unknown as { creds: any });
+                        return await listBuckets(request.params.arguments);
                     case "bucket-measurements":
-                        return await bucketMeasurements(request.params.arguments as unknown as { creds: any; bucketName: string });
+                        return await bucketMeasurements(request.params.arguments);
                     case "execute-query":
-                        return await executeQuery(request.params.arguments as unknown as { creds: any; orgName: string; fluxQuery: string });
+                        return await executeQuery(request.params.arguments);
                     case "write-data":
-                        return await writeData(request.params.arguments as unknown as { creds: any; org: string; bucket: string; data: string; precision: string });
+                        return await writeData(request.params.arguments);
                     case "query-data":
-                        return await queryData(request.params.arguments as unknown as { creds: any; org: string; query: string });
+                        return await queryData(request.params.arguments);
                     case "health-check":
-                        return await healthCheck(request.params.arguments as unknown as { creds: any });
+                        return await healthCheck(request.params.arguments);
                     case "create-bucket":
-                        return await createBucket(request.params.arguments as unknown as { creds: any; name: string; orgID: string; retentionPeriodSeconds: number });
+                        return await createBucket(request.params.arguments);
                     case "delete-bucket":
-                        return await deleteBucket(request.params.arguments as unknown as { creds: any; bucketId: string });
+                        return await deleteBucket(request.params.arguments);
                     case "create-org":
-                        return await createOrg(request.params.arguments as unknown as { creds: any; name: string; description: string });
+                        return await createOrg(request.params.arguments);
                     case "list-org-members":
-                        return await listOrgMembers(request.params.arguments as unknown as { creds: any; orgID: string });
+                        return await listOrgMembers(request.params.arguments);
                     case "remove-org-member":
-                        return await removeOrgMember(request.params.arguments as unknown as { creds: any; orgID: string; userID: string });
+                        return await removeOrgMember(request.params.arguments);
                     case "add-org-member":
-                        return await addOrgMember(request.params.arguments as unknown as { creds: any; orgID: string; id: string; name: string });
+                        return await addOrgMember(request.params.arguments);
                     case "delete-org":
-                        return await deleteOrg(request.params.arguments as unknown as { creds: any; orgId: string });
+                        return await deleteOrg(request.params.arguments);
                     case "list-labels":
-                        return await listLabels(request.params.arguments as unknown as { creds: any; orgID: string });
+                        return await listLabels(request.params.arguments);
                     case "create-label":
-                        return await createLabel(request.params.arguments as unknown as { creds: any; name: string; orgID: string; color: string; description: string });
+                        return await createLabel(request.params.arguments);
                     case "delete-label":
-                        return await deleteLabel(request.params.arguments as unknown as { creds: any; labelID: string });
+                        return await deleteLabel(request.params.arguments);
                     case "update-label":
-                        return await updateLabel(request.params.arguments as unknown as { creds: any; labelID: string; name: string; color: string; description: string });
+                        return await updateLabel(request.params.arguments);
                     case "list-tasks":
-                        return await listTasks(request.params.arguments as unknown as { creds: any });
+                        return await listTasks(request.params.arguments);
                     case "create-task":
-                        return await createTask(request.params.arguments as unknown as { creds: any; description: string; flux: string; orgID: string });
+                        return await createTask(request.params.arguments);
                     case "add-label-to-task":
-                        return await addLabelToTask(request.params.arguments as unknown as { creds: any; taskID: string; labelID: string });
+                        return await addLabelToTask(request.params.arguments);
                     case "list-task-labels":
-                        return await listTaskLabels(request.params.arguments as unknown as { creds: any; taskID: string });
+                        return await listTaskLabels(request.params.arguments);
                     case "delete-label-from-task":
-                        return await deleteLabelFromTask(request.params.arguments as unknown as { creds: any; taskID: string; labelID: string });
+                        return await deleteLabelFromTask(request.params.arguments);
                     case "update-task":
                         return await updateTask(
-                            request.params.arguments as unknown as {
-                                creds: any;
-                                taskID: string;
-                                cron?: string;
-                                description?: string;
-                                every?: string;
-                                flux?: string;
-                                name?: string;
-                                offset?: string;
-                                status?: string;
-                            }
+                            request.params.arguments
                         );
                     case "create-task":
-                        return await createTask(request.params.arguments as unknown as { creds: any; description: string; flux: string; orgID: string });
+                        return await createTask(request.params.arguments);
                     case "flux-query-examples":
                         return await fluxQueryExamplesPrompt();
                     case "line-protocol-guide":
@@ -647,7 +637,7 @@ class InfluxDBServer {
                     default:
                         throw new McpError(ErrorCode.MethodNotFound, `Unknown tool: ${request.params.name}`);
                 }
-            } catch (error: any) {
+            } catch (error) {
                 console.error(error);
                 throw new McpError(ErrorCode.InternalError, `Error executing InfluxDB command: ${error.message}`);
             }

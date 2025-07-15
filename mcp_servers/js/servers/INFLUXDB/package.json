@@ -9,7 +9,7 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --detectOpenHandles --runInBand",
     "start": "node src/index.js",
-    "build": "tsc --outDir build"
+    "build": "tsc"
   },
   "keywords": [
     "influxdb",
