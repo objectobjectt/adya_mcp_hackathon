@@ -1,4 +1,4 @@
-const { makeVercelRequest, validateParams, formatResponse } = require("../utils/helpers.js")
+import { makeVercelRequest, validateParams, formatResponse } from "../utils/helpers.js";
 
 const securityHandlers = {
   list_security_events: {
@@ -182,4 +182,4 @@ const securityHandlers = {
   },
 }
 
-module.exports = { securityHandlers }
+export { securityHandlers }

@@ -1,4 +1,4 @@
-const { makeVercelRequest, validateParams, formatResponse } = require("../utils/helpers.js")
+import { makeVercelRequest, validateParams, formatResponse } from "../utils/helpers.js";
 
 const monitoringHandlers = {
   get_project_analytics: {
@@ -223,4 +223,4 @@ const monitoringHandlers = {
   },
 }
 
-module.exports = { monitoringHandlers }
+export { monitoringHandlers }

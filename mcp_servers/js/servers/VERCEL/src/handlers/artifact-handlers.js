@@ -1,4 +1,4 @@
-const { makeVercelRequest, validateParams, formatResponse } = require("../utils/helpers.js")
+import { makeVercelRequest, validateParams, formatResponse } from "../utils/helpers.js";
 
 const artifactHandlers = {
   list_artifacts: {
@@ -186,4 +186,4 @@ const artifactHandlers = {
   },
 }
 
-module.exports = { artifactHandlers }
+export { artifactHandlers }

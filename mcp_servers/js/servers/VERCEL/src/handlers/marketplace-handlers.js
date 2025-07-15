@@ -1,4 +1,4 @@
-const { makeVercelRequest, validateParams, formatResponse } = require("../utils/helpers.js")
+import { makeVercelRequest, validateParams, formatResponse } from "../utils/helpers.js";
 
 const marketplaceHandlers = {
   list_integrations: {
@@ -185,4 +185,4 @@ const marketplaceHandlers = {
   },
 }
 
-module.exports = { marketplaceHandlers }
+export { marketplaceHandlers }

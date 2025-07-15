@@ -1,4 +1,4 @@
-const { makeVercelRequest, validateParams, formatResponse } = require("../utils/helpers.js")
+import { makeVercelRequest, validateParams, formatResponse } from "../utils/helpers.js";
 
 const environmentHandlers = {
   list_env: {
@@ -241,4 +241,4 @@ const environmentHandlers = {
   },
 }
 
-module.exports = { environmentHandlers }
+export { environmentHandlers }

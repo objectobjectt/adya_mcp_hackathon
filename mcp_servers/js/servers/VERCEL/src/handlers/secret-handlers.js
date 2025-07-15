@@ -1,4 +1,4 @@
-const { makeVercelRequest, validateParams, formatResponse } = require("../utils/helpers.js")
+import { makeVercelRequest, validateParams, formatResponse } from "../utils/helpers.js";
 
 const secretHandlers = {
   list_secrets: {
@@ -200,4 +200,4 @@ const secretHandlers = {
   },
 }
 
-module.exports = { secretHandlers }
+export { secretHandlers }

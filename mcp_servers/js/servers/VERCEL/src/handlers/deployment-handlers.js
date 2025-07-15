@@ -1,4 +1,4 @@
-const { makeVercelRequest, validateParams, formatResponse } = require("../utils/helpers.js")
+import { makeVercelRequest, validateParams, formatResponse } from "../utils/helpers.js";
 
 const deploymentHandlers = {
   list_deployment: {
@@ -271,4 +271,4 @@ const deploymentHandlers = {
   },
 }
 
-module.exports = { deploymentHandlers }
+export { deploymentHandlers }
