@@ -1,4 +1,4 @@
-const { GoogleGenerativeAI } = require("@google/generative-ai")
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 /**
  * Validate required environment variables
@@ -183,7 +183,7 @@ Provide:
 Format as a comprehensive security report.`
 }
 
-module.exports = {
+export {
   validateEnvironment,
   createContext,
   formatResponse,
@@ -194,4 +194,4 @@ module.exports = {
   generateDeploymentPrompt,
   generateOptimizationPrompt,
   generateSecurityPrompt,
-}
+};

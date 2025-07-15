@@ -1,4 +1,4 @@
-const { makeVercelRequest, validateParams, formatResponse } = require("../utils/helpers.js")
+import { makeVercelRequest, validateParams, formatResponse } from "../utils/helpers.js";
 
 const domainHandlers = {
   list_domains: {
@@ -221,4 +221,4 @@ const domainHandlers = {
   },
 }
 
-module.exports = { domainHandlers }
+export { domainHandlers }

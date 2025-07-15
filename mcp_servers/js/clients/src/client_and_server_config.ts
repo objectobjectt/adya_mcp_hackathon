@@ -34,6 +34,6 @@ export const ServersConfig: any = [
 	{
 		server_name: "VERCEL",
 		server_features_and_capability: `VERCEL`,
-		path: "src/index.js",
+		path: "build/index.js",
 	},
 ];

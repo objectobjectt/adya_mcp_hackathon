@@ -1,4 +1,4 @@
-const { makeVercelRequest, validateParams, formatResponse } = require("../utils/helpers.js")
+import { makeVercelRequest, validateParams, formatResponse } from "../utils/helpers.js";
 
 const teamHandlers = {
   list_teams: {
@@ -152,4 +152,4 @@ const teamHandlers = {
   },
 }
 
-module.exports = { teamHandlers }
+export { teamHandlers }
